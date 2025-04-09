@@ -1,4 +1,9 @@
-<script >
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination } from 'swiper/modules';
+
+const modules = [Pagination];
+
 defineProps({
   image: String,
   location: String,
@@ -6,30 +11,6 @@ defineProps({
   rating: Number,
   highlight: Boolean
 })
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-// Import Swiper styles
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-
-import './src/assets/style.scss';
-
-// import required modules
-import { FreeMode, Pagination } from 'swiper/modules';
-
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  setup() {
-    return {
-      modules: [FreeMode, Pagination],
-    };
-  },
-};
 </script>
 
 <template>
@@ -75,7 +56,7 @@ export default {
         <div class="">
           <swiper
               :slidesPerView="3"
-              :spaceBetween="60"
+              :spaceBetween="30"
               :freeMode="true"
               :pagination="{
       clickable: true,
@@ -83,11 +64,11 @@ export default {
               :modules="modules"
               class="mySwiper"
           >
-            <swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide>
-            <swiper-slide> <img src="/foto1.jpg" alt="Imagem 1"></swiper-slide><swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide>
-            <swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide><swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide>
-            <swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide><swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide>
-            <swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide><swiper-slide><img src="/foto1.jpg" alt="Imagem 1"></swiper-slide>
+            <swiper-slide><img src="/iu.jpg" alt=""></swiper-slide>
+            <swiper-slide><img src="/lago.jpg" alt=""></swiper-slide><swiper-slide><img src="/th (2).jpg" alt=""></swiper-slide>
+            <swiper-slide><img src="/OIP.jpg" alt=""></swiper-slide><swiper-slide><img src="/th (3).jpg" alt=""></swiper-slide>
+            <swiper-slide><img src="/th.jpg" alt=""></swiper-slide><swiper-slide><img src="/th 5.jpg" alt=""></swiper-slide>
+            <swiper-slide><img src="/th (1).jpg" alt=""></swiper-slide><swiper-slide><img src="/trem.jpg" alt=""></swiper-slide>
           </swiper>
         </div>
       </div>
@@ -279,6 +260,28 @@ export default {
 body {
   padding: 0;
   margin: 0;
+}
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 </style>
